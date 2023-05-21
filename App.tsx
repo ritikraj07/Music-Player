@@ -1,17 +1,26 @@
 import 'react-native-gesture-handler';
-import { NavigationContainer } from '@react-navigation/native';
+import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
 import {StatusBar} from 'react-native';
 
 import MyStack from './Source/Navigator/MyStack';
 import BottomPlayer from './Source/Components/BottomPlayer';
 
+const MyTheme = {
+  ...DefaultTheme,
+  colors: {
+    background: '#128C7E',
+    primary: '#075E54',
+    card: 'white',
+    text: 'white',
+    border: 'white',
+    notification: 'white',
+  },
+};
 
 
-
-
-function App(){
+function App() {
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={MyTheme}>
       <StatusBar backgroundColor={'transparent'} />
       <MyStack />
       <BottomPlayer />
