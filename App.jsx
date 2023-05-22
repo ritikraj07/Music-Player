@@ -21,7 +21,7 @@ const MyTheme = {
 function App() {
   return (
     <NavigationContainer theme={MyTheme}>
-      <StatusBar backgroundColor={'transparent'} />
+      <StatusBar />
       <MyStack />
       <BottomPlayer />
     </NavigationContainer>
