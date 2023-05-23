@@ -8,6 +8,8 @@ import {
   Playlist,
   RecentAdd,
 } from '../Screens/screens';
+import RecentPlay from '../Screens/RecentPlay';
+import Folder from '../Screens/Folder';
 const Stack = createStackNavigator();
 let MyStack = () => {
   return (
@@ -23,6 +25,8 @@ let MyStack = () => {
       <Stack.Screen name="Player" component={Player} />
       <Stack.Screen name="Playlist" component={Playlist} />
       <Stack.Screen name="RecentAdd" component={RecentAdd} />
+      <Stack.Screen name="RecentPlay" component={RecentPlay} />
+      <Stack.Screen name="Folder" component={Folder}/>
     </Stack.Navigator>
   );
 };

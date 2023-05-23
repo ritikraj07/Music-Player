@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import { useTheme } from '@react-navigation/native';
 import MyIcon from '../Utility/MyIcon';
-let Favorite = (navigation) => {
+let MostPlay = (navigation) => {
   const { colors } = useTheme();
   return (
     <View style={[Styles.container]}>
@@ -15,7 +15,7 @@ let Favorite = (navigation) => {
               fontWeight: 700,
               marginHorizontal: 5
             }}>
-            Favorite
+            Most Play
           </Text>
         </View>
         <View style={Styles.HrRight} >
@@ -53,4 +53,4 @@ const Styles = StyleSheet.create({
   }
 })
 
-export default Favorite;
+export default MostPlay;
