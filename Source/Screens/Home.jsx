@@ -1,7 +1,8 @@
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, Alert, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import { useTheme } from '@react-navigation/native';
 import { useState } from 'react';
 import MyIcon from '../Utility/MyIcon';
+import PlaylistAlert from '../Components/PlaylistAlert';
 
 let Home = ({navigation}) => {
   const { colors } = useTheme();
@@ -47,6 +48,25 @@ let Home = ({navigation}) => {
 
   const [playlist, setplaylist] = useState([])
 
+  const showAlert = () =>
+    Alert.alert(
+      'Alert Title',
+      'My Alert Msg',
+      [
+        {
+          text: 'Cancel',
+          onPress: () => Alert.alert('Cancel Pressed'),
+          style: 'cancel',
+        },
+      ],
+      {
+        cancelable: true,
+        onDismiss: () =>
+          Alert.alert(
+            'This alert was dismissed by tapping outside of the alert dialog.',
+          ),
+      },
+    );
 
   return (
     <View style={[Styles.container]}>
@@ -90,7 +110,9 @@ let Home = ({navigation}) => {
 
       <ScrollView>
         <View style={[Styles.boxParent, {justifyContent:'flex-start', marginBottom:10}]}>
-          <TouchableOpacity style={[Styles.box, {}]}>
+          <TouchableOpacity onPress={() => {
+            Alert.alert('Hello', 'hello',)
+          }} style={[Styles.box, {}]}>
             <MyIcon packageName={'FontAwesome'} name={'plus'} />
           </TouchableOpacity>
           {playlist.map((pl, i) => {
@@ -104,10 +126,7 @@ let Home = ({navigation}) => {
               </Text>
             </TouchableOpacity>
           })}
-          
         </View>
-
-
       </ScrollView>
     </View>
   );
